@@ -5,7 +5,7 @@ import java.io.IOException;
 public class HammingDistance
 {
     
-    public void HammingDist() throws IOException {
+    public HammingDistance() throws IOException {
         String fileName = "Mesonet.txt";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
 
@@ -22,7 +22,11 @@ public class HammingDistance
 
         }
         
+        
         br.close();
+        
+        
+        
     }
    
 }
