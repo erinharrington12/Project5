@@ -10,6 +10,7 @@ import java.text.NumberFormat;
 import java.util.Hashtable;
 
 import javax.swing.JTextField;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,7 +24,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
     private JLabel hamDistLable;
     private JTextField hamDistField;
     private JSlider hamDistSlide;
-
+    private JButton showStationB;
     public Frame()
     {
         setTitle("Hamming Distance");
@@ -62,11 +63,15 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         position.put(3, new JLabel("3"));
         position.put(4, new JLabel("4"));
         hamDistSlide.setLabelTable(position);
+        
+        // Create Show Station Button
+        showStationB = new JButton("Show Station");
+        showStationB.addActionListener(this);
 
         // Use a GridBagLayout
         setLayout(new GridBagLayout());
 
-        // Specify component's grid location:
+        
 
         // Hamming Distance Lable layout
         layoutConst = new GridBagConstraints();
@@ -92,6 +97,15 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         layoutConst.gridx = 0;
         layoutConst.gridy = 1;
         add(hamDistSlide, layoutConst);
+        
+        //Show Station Button layout
+        layoutConst = new GridBagConstraints();
+        layoutConst.insets = new Insets(10,10,10,5);
+        layoutConst.anchor = GridBagConstraints.LINE_END;
+        layoutConst.gridx = 0;
+        layoutConst.gridy = 2;
+        layoutConst.gridwidth = 1;
+        add(showStationB, layoutConst);
         
       
         
