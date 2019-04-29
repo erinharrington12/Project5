@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.JTextArea;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -23,6 +24,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
 
     private JLabel hamDistLable;
     private JTextField hamDistField;
+    private JTextArea stationsField;
     private JSlider hamDistSlide;
     private JButton showStationB;
     public Frame()
@@ -49,6 +51,9 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         hamDistField.setEditable(false);
         hamDistField.setText("1");
        
+        //Create text box to show stations
+        stationsField = new JTextArea(10,10);
+        stationsField.setEditable(false);
 
         // Create slider for hamming distance
         hamDistSlide = new JSlider(1, 4, 1);
@@ -96,6 +101,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         layoutConst.insets = new Insets(10, 1, 10, 10);
         layoutConst.gridx = 0;
         layoutConst.gridy = 1;
+        layoutConst.gridwidth = 1;
         add(hamDistSlide, layoutConst);
         
         //Show Station Button layout
@@ -106,6 +112,16 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         layoutConst.gridy = 2;
         layoutConst.gridwidth = 1;
         add(showStationB, layoutConst);
+        
+        //Stations box layout
+        layoutConst = new GridBagConstraints();
+        layoutConst.insets = new Insets(10, 10, 10, 10);
+        layoutConst.anchor = GridBagConstraints.LINE_END;
+        layoutConst.gridx = 0;
+        layoutConst.gridy = 3;
+        
+        add(stationsField, layoutConst);
+        
         
       
         
