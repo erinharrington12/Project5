@@ -1,17 +1,18 @@
+import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-<<<<<<< HEAD
+
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.LayoutManager;
-=======
+
 import java.awt.Insets;
->>>>>>> fe83d91344740ec73c6e78d61ebd07450b8416b8
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.NumberFormat;
-<<<<<<< HEAD
+
 import java.util.Hashtable;
 
 import javax.swing.JTextField;
@@ -21,19 +22,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
-=======
+
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
->>>>>>> fe83d91344740ec73c6e78d61ebd07450b8416b8
+
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class Frame extends JFrame implements ActionListener, ChangeListener
 {
-<<<<<<< HEAD
+
 
     private JLabel hamDistLable;
     private JTextField hamDistField;
@@ -45,12 +46,13 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         setTitle("Hamming Distance");
         
         //Panel to hold all other panels
-         JPanel mainPanel = new JPanel();
+         JPanel mainPanel = new JPanel(new GridBagLayout());
          mainPanel.setBounds(40,80,200,200);
          
+         add(mainPanel);
          //First panel to enter hamming distance and to show stations
-         JPanel showStationPanel = new JPanel();
-         
+         JPanel showStationPanel = new JPanel(new GridBagLayout());
+         mainPanel.add(showStationPanel);
          
         GridBagConstraints layoutConst = null;
 
@@ -86,9 +88,9 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         showStationB = new JButton("Show Station");
         showStationB.addActionListener(this);
 
-        // Use a GridBagLayout
-        setLayout(new GridBagLayout());
+       
 
+        
         
 
         // Hamming Distance Lable layout
@@ -98,42 +100,43 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         layoutConst.gridx = 0;
         layoutConst.gridy = 0;
         layoutConst.gridwidth = 1;
-        add(hamDistLable, layoutConst);
+        showStationPanel.add(hamDistLable, layoutConst);
 
-        // Hamming Distance JTextField layout
-        layoutConst = new GridBagConstraints();
-        layoutConst.insets = new Insets(10, 1, 10, 10);
-        layoutConst.fill = GridBagConstraints.HORIZONTAL;
-        layoutConst.gridx = 1;
-        layoutConst.gridy = 0;
-        layoutConst.gridwidth = 1;
-        add(hamDistField, layoutConst);
-        
-        // Hamming Distance slider
-        layoutConst = new GridBagConstraints();
-        layoutConst.insets = new Insets(10, 1, 10, 10);
-        layoutConst.gridx = 0;
-        layoutConst.gridy = 1;
-        layoutConst.gridwidth = 1;
-        add(hamDistSlide, layoutConst);
-        
-        //Show Station Button layout
-        layoutConst = new GridBagConstraints();
-        layoutConst.insets = new Insets(10,10,10,5);
-        layoutConst.anchor = GridBagConstraints.LINE_END;
-        layoutConst.gridx = 0;
-        layoutConst.gridy = 2;
-        layoutConst.gridwidth = 1;
-        add(showStationB, layoutConst);
-        
-        //Stations box layout
-        layoutConst = new GridBagConstraints();
-        layoutConst.insets = new Insets(10, 10, 10, 10);
-        layoutConst.anchor = GridBagConstraints.LINE_END;
-        layoutConst.gridx = 0;
-        layoutConst.gridy = 3;
-        
-        add(stationsField, layoutConst);
+//        // Hamming Distance JTextField layout
+//        layoutConst = new GridBagConstraints();
+//        layoutConst.insets = new Insets(10, 1, 10, 10);
+//        layoutConst.fill = GridBagConstraints.HORIZONTAL;
+//        layoutConst.gridx = 1;
+//        layoutConst.gridy = 0;
+//        layoutConst.gridwidth = 1;
+//        add(hamDistField, layoutConst);
+//        
+//        // Hamming Distance slider
+//        layoutConst = new GridBagConstraints();
+//        layoutConst.insets = new Insets(10, 1, 10, 10);
+//        layoutConst.anchor = GridBagConstraints.PAGE_START;
+//        layoutConst.gridx = 0;
+//        layoutConst.gridy = 1;
+//        layoutConst.gridwidth = 1;
+//        add(hamDistSlide, layoutConst);
+//        
+//        //Show Station Button layout
+//        layoutConst = new GridBagConstraints();
+//        layoutConst.insets = new Insets(10,10,10,5);
+//        layoutConst.anchor = GridBagConstraints.FIRST_LINE_START;
+//        layoutConst.gridx = 0;
+//        layoutConst.gridy = 2;
+//        layoutConst.gridwidth = 1;
+//        add(showStationB, layoutConst);
+//        
+//        //Stations box layout
+//        layoutConst = new GridBagConstraints();
+//        layoutConst.insets = new Insets(10, 10, 10, 10);
+//        layoutConst.anchor = GridBagConstraints.LINE_START;
+//        layoutConst.gridx = 0;
+//        layoutConst.gridy = 3;
+//        
+//        add(stationsField, layoutConst);
         
         
       
@@ -156,90 +159,12 @@ public class Frame extends JFrame implements ActionListener, ChangeListener
         hamDistField.setText(strSliderVal); // Updates display
 
     }
-=======
-    
-    private JLabel hamDistLable;
-    private JFormattedTextField hamDistField;
-    
-    private JSlider hamDistSlide;
-    
-    
-    
-    
-    
-    public Frame() {
-        
-        GridBagConstraints layoutConst = null;
-        
-        //Set frame's title
-        setTitle("Hamming Distance");
-        
-        //Create different labels
-        hamDistLable = new JLabel("Enter Hamming Dist");
-        
-        
-        //Create and set-up an input field for numbers
-        hamDistField = new JFormattedTextField(NumberFormat.getNumberInstance());
-        hamDistField.setEditable(true);
-        hamDistField.setText("0");
-        hamDistField.setColumns(15);
-        
-        //Create slider for hamming distance
-        hamDistSlide = new JSlider(1,4,1);
-        hamDistSlide.addChangeListener(this);
-        
-        
-        
-        
-        //Use a GridBagLayout
-        setLayout(new GridBagLayout());
-        
-        //Specify component's grid location:
-        
-        //Hamming Distance Lable layout
-        layoutConst = new GridBagConstraints();
-        layoutConst.insets = new Insets(10, 10, 10, 1);
-        layoutConst.gridx = 0;
-        layoutConst.gridy = 0;
-        add(hamDistLable, layoutConst);
-        
-        //Hamming Distance JTextField layout
-        layoutConst = new GridBagConstraints();
-        layoutConst.insets = new Insets(10, 1, 10, 10);
-        layoutConst.gridx = 1;
-        layoutConst.gridy = 0;
-        add(hamDistField, layoutConst);
-    }
-
-
-
-
-
-    @Override
-    public void stateChanged(ChangeEvent arg0)
-    {
-        int sliderVal; //Slider value in int
-        String strSliderVal; //Slider value in string
-        
-        sliderVal = hamDistSlide.getValue(); //Get slider value
-        strSliderVal = Integer.toString(sliderVal); //Convert slider value to int
-        hamDistField.setText(strSliderVal); //Updates display
-        
-    }
-
-
-
-
->>>>>>> fe83d91344740ec73c6e78d61ebd07450b8416b8
 
     @Override
     public void actionPerformed(ActionEvent arg0)
     {
         // TODO Auto-generated method stub
-<<<<<<< HEAD
-
-=======
         
->>>>>>> fe83d91344740ec73c6e78d61ebd07450b8416b8
     }
+    
 }
