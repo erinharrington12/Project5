@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>Project 5</name>
+=======
+<<<<<<< HEAD
+	<name>Project5</name>
+=======
+	<name>Project 5</name>
+>>>>>>> fe83d91344740ec73c6e78d61ebd07450b8416b8
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
+<<<<<<< HEAD
 	</buildSpec>
 	<natures>
+=======
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 	</natures>
 </projectDescription>

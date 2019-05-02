@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -89,4 +90,36 @@ public class HammingDistance {
 		return stationID;
 	}
 
+=======
+import java.io.FileReader;
+import java.io.IOException;
+
+public class HammingDistance
+{
+    
+    public HammingDistance() throws IOException {
+        String fileName = "Mesonet.txt";
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+
+        String[] stationId = new String[120];
+        
+
+        String lineOfData = br.readLine();
+
+        for(int i = 0; i<stationId.length; i++)
+        {
+
+            stationId[i] = lineOfData;
+            lineOfData = br.readLine();
+
+        }
+        
+        
+        br.close();
+        
+        
+        
+    }
+   
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 }

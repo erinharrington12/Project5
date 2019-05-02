@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Font;
+=======
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -37,13 +40,18 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 	private JScrollPane scrollPane;
 	private JLabel compareLabel;
 	private JTextField compareField;
+<<<<<<< HEAD
 	private JComboBox<String> c1;
+=======
+	static JComboBox c1;
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 	private JButton calcHD;
 	private JLabel distance0;
 	private JLabel distance1;
 	private JLabel distance2;
 	private JLabel distance3;
 	private JLabel distance4;
+<<<<<<< HEAD
 	private JTextField distance0Field;
 	private JTextField distance1Field;
 	private JTextField distance2Field;
@@ -57,6 +65,9 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 	private JLabel rainbow;
 	private JLabel colored;
 	private JLabel labels;
+=======
+
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 	public Frame() throws IOException {
 
 		GridBagConstraints layoutConst = null;
@@ -68,6 +79,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		// Set Main Panel
 		JPanel mainPanel = new JPanel(new GridBagLayout());
 
+<<<<<<< HEAD
 		
 
 		// Set free draw panel
@@ -76,10 +88,25 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		// Create different labels
 		hamDistLable = new JLabel("Enter Hamming Dist:");
     
+=======
+		// Set show station Panel
+		JPanel showStation = new JPanel();
+		showStation.setLayout(new GridBagLayout());
+//        
+		// Set free draw panel
+		JPanel freeDraw = new JPanel(new GridLayout());
+//        
+//        
+		// Create different labels
+		hamDistLable = new JLabel("Enter Hamming Dist:");
+//        
+//        
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 		// Create and set-up an input field for numbers
 		hamDistField = new JTextField(5);
 		hamDistField.setEditable(false);
 		hamDistField.setText("1");
+<<<<<<< HEAD
   
 		// Create slider for hamming distance
 		hamDistSlide = new JSlider(1, 4, 1);
@@ -92,12 +119,24 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		// Create show station button
 		showButton = new JButton("Show Station");
 		showButton.addActionListener(this);
+=======
+//        
+		// Create slider for hamming distance
+		hamDistSlide = new JSlider(1, 4, 1);
+		hamDistSlide.addChangeListener(this);
+		hamDistSlide.setPaintTicks(true);
+		hamDistSlide.setPaintLabels(true);
+
+		// Create show station button
+		showButton = new JButton("Show Station");
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 
 		// Create station output area and add to scroll pane
 		outputArea = new JTextArea(10, 15);
 		scrollPane = new JScrollPane(outputArea);
 		outputArea.setEditable(false);
 
+<<<<<<< HEAD
 		// Create label and button for comparison
 		compareLabel = new JLabel("Compare with:");
 		
@@ -105,6 +144,15 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		// Create button to calculate HD
 		calcHD = new JButton("Calculate HD");
 		calcHD.addActionListener(this);
+=======
+		// Create lable and button for comparison
+		compareLabel = new JLabel("Compare with:");
+		compareField = new JTextField(10);
+		compareField.setEditable(false);
+
+		// Create button to calculate HD
+		calcHD = new JButton("Calculate HD");
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 
 		// Create distance labels
 		distance0 = new JLabel("Distance 0");
@@ -113,6 +161,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		distance3 = new JLabel("Distance 3");
 		distance4 = new JLabel("Distance 4");
 
+<<<<<<< HEAD
 		// Create distance text fields
 		distance0Field = new JTextField(10);
 		distance0Field.setEditable(false);
@@ -163,6 +212,8 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		labels = new JLabel("Labels");
 		labels.setForeground(Color.BLUE);
 		labels.setFont(new Font("Serif", Font.PLAIN, 30));
+=======
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 		// Reads through Mesonet.txt to get all the stations in one array
 		String fileName = "Mesonet.txt";
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -181,6 +232,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		br.close();
 
 		// Create drop-down box
+<<<<<<< HEAD
 		c1 = new JComboBox<String>(stationId);
 		c1.addActionListener(this);
 
@@ -229,11 +281,23 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		layoutConst.gridy = 5;
 		layoutConst.gridwidth = 1;
 		freeDraw.add(labels, layoutConst);
+=======
+		c1 = new JComboBox(stationId);
+
+		this.add(mainPanel);
+		this.add(freeDraw);
+		mainPanel.add(showStation);
+
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 		// Arrange show station components
 
 		// Hamming Distance Lable layout
 		layoutConst = new GridBagConstraints();
+<<<<<<< HEAD
 		layoutConst.insets = new Insets(0, -100, 0, 0);
+=======
+		layoutConst.insets = new Insets(0, 10, 0, 0);
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 		layoutConst.fill = GridBagConstraints.LINE_START;
 		layoutConst.gridx = 0;
 		layoutConst.gridy = 0;
@@ -242,7 +306,11 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 
 		// Hamming Distance Field layout
 		layoutConst = new GridBagConstraints();
+<<<<<<< HEAD
 		layoutConst.insets = new Insets(0, -99, 1, 10);
+=======
+		layoutConst.insets = new Insets(0, 1, 1, 10);
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 		layoutConst.anchor = GridBagConstraints.LINE_START;
 		layoutConst.gridx = 1;
 		layoutConst.gridy = 0;
@@ -255,7 +323,11 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		layoutConst.insets = new Insets(10, 25, 1, 1);
 		layoutConst.gridx = 0;
 		layoutConst.gridy = 1;
+<<<<<<< HEAD
 		layoutConst.gridwidth = 1;
+=======
+		layoutConst.gridwidth = 2;
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 		mainPanel.add(hamDistSlide, layoutConst);
 
 		// Hamming Distance slider layout
@@ -301,6 +373,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 		layoutConst.gridy = 6;
 		mainPanel.add(distance0, layoutConst);
 
+<<<<<<< HEAD
 		// Distance 0 field layout
 		layoutConst = new GridBagConstraints();
 		layoutConst.insets = new Insets(10, -50, 1, 1);
@@ -392,6 +465,12 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 
 	@Override
 	public void stateChanged(ChangeEvent e) {
+=======
+	}
+
+	@Override
+	public void stateChanged(ChangeEvent arg0) {
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 		int sliderVal; // Slider value in int
 		String strSliderVal; // Slider value in string
 
@@ -402,6 +481,7 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
@@ -425,5 +505,10 @@ public class Frame extends JFrame implements ActionListener, ChangeListener {
 			
 		}
 
+=======
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+
+>>>>>>> d0ebca05e420d6d2c42273d78b617c6da7b90185
 	}
 }
