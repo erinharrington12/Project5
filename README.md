@@ -20,7 +20,9 @@
 ### Frame
 * Class to create frame
 * Holds all Jpanels(mainPanel, freeDraw)
-* Has actionPerformed and stateChanged methods
+* Has actionPerformed and stateChanged methods:
+* actionPerformed() : Determines if the action performed was "Show Station" button, "Calculate HD" button, and "Add Station" Button
+* stateChanged(): determines the slider value and inputs it into the "Entering Hamming Dist" field
 
 ### Hamming Distance
 * HammingDistance(): Blank constructor
