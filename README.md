@@ -20,7 +20,6 @@
 ### Frame
 * Class to create frame
 * Holds all Jpanels(mainPanel, freeDraw)
-* 
 * Has actionPerformed and stateChanged methods
 
 ### Hamming Distance
